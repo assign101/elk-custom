@@ -1,0 +1,16 @@
+# master.yaml
+---
+clusterName: "elasticsearch"
+nodeGroup: "master"
+roles:
+  master: "true"
+  ingest: "false"
+  data: "false"
+replicas: 3
+
+volumeClaimTemplate:
+  accessModes: [ "ReadWriteOnce" ]
+  storageClassName: "nfs-storageclass"
+  resources:
+    requests:
+      storage: 4Gi
